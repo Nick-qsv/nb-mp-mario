@@ -1,0 +1,41 @@
+{
+  "name": "super_mario",
+  "version": "1.0.0",
+  "description": "FSA 2110 Stackathon -  Super Mario Multiplayer - Nicolas Baez",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "build:dev": "npm run build -- --watch --mode=development",
+    "start": "node server/index.js",
+    "start:dev": "npm run build:dev & npm run start-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nicolas Baez",
+  "license": "ISC",
+  "keywords": [],
+  "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@expo/webpack-config": "^0.16.18",
+    "babel-loader": "^8.2.3",
+    "nodemon": "^2.0.15",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-hook-form": "^7.27.1",
+    "react-redux": "^7.2.6",
+    "redux": "^4.1.2",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.4.1",
+    "webpack": "^5.69.1",
+    "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "pg": "^8.7.3",
+    "react-router-dom": "^6.2.1",
+    "sequelize": "^6.17.0"
+  }
+}
