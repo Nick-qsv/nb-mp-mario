@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import {App} from "./App";
+import {Game} from "./Game";
 
 ReactDOM.render(
-      <App />,
+      <Game />,
   document.getElementById("app")
 );
