@@ -5605,23 +5605,6 @@ function deepmerge(target, source, options = {
 
 /***/ }),
 
-/***/ "./client/Components/Levels.js":
-/*!*************************************!*\
-  !*** ./client/Components/Levels.js ***!
-  \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Leevels": () => (/* binding */ Leevels)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-const Leevels = [["                                                                                                ", "                                                                                                ", "                                                                                                ", "                                                                                                ", "                                                                                                ", "                                                                                                ", "                                                                                                ", "      -?-b-                                                                                     ", "                                                    ?        ?                                  ", "                                                                                                ", "                                      t                 ?                                       ", "                                 t    |                                                         ", "                           t     |    |                t                                        ", "       E                   |     |    |   E   E        |                            H           ", "================     ===========================================================================", "================     ==========================================================================="], ["                                                                                             ", "                                                                                             ", "                                                                                             ", "                                       ?                                                     ", "                                                                                             ", "                                   -?-                                                       ", "                                                                                             ", "      -?-b-                  -?-                                                             ", "                                                                                             ", "                                                                                             ", "                                                                                             ", "                                                                                             ", "       _                                            _                                        ", "       |                                            |          E    E            H           ", "================     ========================================================================", "================     ========================================================================"]];
-
-/***/ }),
-
 /***/ "./client/Game.js":
 /*!************************!*\
   !*** ./client/Game.js ***!
@@ -5635,9 +5618,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var kaboom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! kaboom */ "./node_modules/kaboom/dist/kaboom.mjs");
-/* harmony import */ var _mui_material_Box__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mui/material/Box */ "./node_modules/@mui/material/Box/Box.js");
-/* harmony import */ var _Components_Levels__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Components/Levels */ "./client/Components/Levels.js");
-
+/* harmony import */ var _mui_material_Box__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @mui/material/Box */ "./node_modules/@mui/material/Box/Box.js");
 
 
 
@@ -5645,7 +5626,7 @@ __webpack_require__.r(__webpack_exports__);
 const Game = () => {
   const initGame = () => {
     (0,kaboom__WEBPACK_IMPORTED_MODULE_1__["default"])({
-      background: [134, 135, 247],
+      background: [100, 135, 247],
       width: 400,
       height: 240,
       canvas: document.querySelector("#main")
@@ -5667,7 +5648,8 @@ const Game = () => {
     loadSprite("shrubbery", "shrubbery.png");
     loadSprite("hill", "hill.png");
     loadSprite("cloud", "cloud.png");
-    loadSprite("castle", "castle.png"); //mario sounds
+    loadSprite("castle", "castle.png");
+    loadSprite("dBrick", "DeBrick.png"); //mario sounds
 
     loadSound("die", "smb_mariodie.wav");
     loadSound("coin", "smb_coin.wav");
@@ -5675,7 +5657,19 @@ const Game = () => {
     loadSound("powerUpAppears", "smb_powerup_appears.wav");
     loadSound("powerUp", "smb_powerup.wav");
     loadSound("stageClear", "smb_stage_clear.wav");
-    const LEVELS = [["                                                                                                ", "                                                                                                ", "                                                                                                ", "                                                                                                ", "                                                                                                ", "                                                                                                ", "                                                                                                ", "      -?-b-                                                                                     ", "                                                    ?        ?                                  ", "                                                                                                ", "                                      t                 ?                                       ", "                                 t    |                                                         ", "                           t     |    |                t                                        ", "       E     K             |     |    |   E   E        |                            H           ", "================     ===========================================================================", "================     ==========================================================================="], ["                                                                                             ", "                                                                                             ", "                                                                                             ", "                                       ?                                                     ", "                                                                                             ", "                                   -?-                                                       ", "                                                                                             ", "      -?-b-                  -?-                                                             ", "                                                                                             ", "                                                                                             ", "                                                                                             ", "                                                                                             ", "       _                                            _                                        ", "       |                                            |          E    E            H           ", "================     ========================================================================", "================     ========================================================================"]];
+    loadSound("dBrick", "smb_breakblock.wav");
+    loadSound("main", "MainThemeOverworld.mp3");
+    loadSound("squash", "smb_stomp.wav");
+    loadSound("lostBig", "smb3_lost_suit.wav");
+    loadSound("timeWarn", "smb_warning.wav"); //main soundtrack
+
+    const music = play("main", {
+      volume: 0.1,
+      loop: true
+    }); //LEVELS
+
+    const LEVELS = [["                                                                                                ", "                                                                                                ", "                                                                                                ", "                                                                                                ", "                                                                                                ", "                                                                                                ", "                                                                                                ", "      -?-b-                                                                                     ", "                                                    ?        ?                                  ", "                                                                                                ", "                                      t                 ?                                       ", "                                 t    |                                                         ", "                           t     |    |                t                                        ", "       E                   |     |    |   E   E        |                            H           ", "================     ===========================================================================", "================     ==========================================================================="], ["                                                                                             ", "                                                                                             ", "                                                                                             ", "                                       ?                                                     ", "                                                                                             ", "                                   -?-                                                       ", "                                                                                             ", "      -?-b-                  -?-                                                             ", "                                                                                             ", "                                                                                             ", "                                                                                             ", "                                                                                             ", "       _                                            _                                        ", "       |                                            |          E    E            H           ", "================     ========================================================================", "================     ========================================================================"]]; //SPRITES SETUP
+
     const spriteMap = {
       width: 16,
       height: 16,
@@ -5716,31 +5710,87 @@ const Game = () => {
       }), area({
         width: 16,
         height: 16
-      }), body(), luigi(), bump(25, 2, false), origin("bot"), "player2"]
-    };
+      }), body(), luigi(), bump(25, 2, false), origin("bot"), "player2"],
+      ",": () => [sprite("dBrick"), area(), solid(), bump(30, 3, false), origin("bot"), "dBrick"]
+    }; //START SCENE
+
     scene("start", () => {
       add([text("Press enter to start", {
-        size: 24
+        size: 24,
+        font: "sink"
       }), pos(vec2(200, 120)), origin("center"), color(255, 255, 255)]);
       onKeyRelease("enter", () => {
         go("game");
       });
     });
-    go("start");
-    scene("game", (levelNumber = 0) => {
+    go("start"); // scene("gameOver", ()=>{
+    //   add()
+    // })
+    //LEVEL TRANSITION SCENE
+
+    scene("nextLevel", ({
+      levelId,
+      coins,
+      score
+    }) => {
+      add([text(`You passed level ${levelId}!`, {
+        size: 16,
+        font: "sink"
+      }), pos(vec2(200, 60)), origin("center"), color(255, 255, 255)]);
+      add([text(`Your score was: ${score}`, {
+        size: 16,
+        font: "sink"
+      }), pos(vec2(200, 120)), origin("center"), color(255, 255, 255)]);
+      add([text(`Press ENTER to proceed to the next level`, {
+        size: 12,
+        font: "sink"
+      }), pos(vec2(200, 190)), origin("center"), color(255, 255, 255)]);
+      onKeyRelease("enter", () => {
+        go("game", {
+          levelId: levelId,
+          coins: coins,
+          score: score
+        });
+      });
+    }); // go("nextLevel",{levelId: 0, coins: 0, score: 0})
+    //GAME SCENE
+
+    scene("game", ({
+      levelId,
+      coins,
+      score
+    } = {
+      levelId: 0,
+      coins: 0,
+      score: 0
+    }) => {
       layers(["bg", "game", "ui"], "game");
-      const level = addLevel(LEVELS[levelNumber], spriteMap);
+      let time = 400;
+      const scoreUi = add([text(`SCORE: ${score}`, {
+        size: 10,
+        font: "sinko"
+      }), pos(12, 12), fixed(), layer("ui")]);
+      const coinUi = add([text(`COINS: ${coins}`, {
+        size: 10,
+        font: "sinko"
+      }), pos(170, 12), fixed(), layer("ui")]);
+      const timeUI = add([text(`TIME: ${time}`, {
+        size: 10,
+        font: "sinko"
+      }), pos(320, 12), fixed(), layer("ui")]);
+      const level = addLevel(LEVELS[levelId], spriteMap);
       add([sprite("cloud"), pos(20, 50), layer("bg")]);
       add([sprite("hill"), pos(32, 208), layer("bg"), origin("bot")]);
       add([sprite("shrubbery"), pos(200, 208), layer("bg"), origin("bot")]);
-      add([text(`Level ${levelNumber + 1}`, {
+      add([text(`Level ${levelId + 1}`, {
         size: 24
       }), pos(vec2(200, 120)), color(255, 255, 255), origin("center"), layer("ui"), lifespan(1, {
         fade: 0.5
       })]);
-      const player = level.spawn("p", 1, 10); //MARIO/LUIGI MOVEMENTS
+      const player = level.spawn("p", 1, 10);
+      music.play(); //MARIO/LUIGI MOVEMENTS
 
-      const SPEED = 120;
+      let SPEED = 120;
       onKeyDown("d", () => {
         if (player.isFrozen) return;
         player.flipX(false);
@@ -5753,6 +5803,17 @@ const Game = () => {
         if (toScreen(player.pos).x > 20) {
           player.move(-SPEED, 0);
         }
+      });
+      onKeyDown("shift", () => {
+        if (SPEED < 210) {
+          SPEED += 0.4;
+        }
+      });
+      onKeyRelease("shift", () => {
+        SPEED = 120;
+      });
+      onKeyRelease("a", () => {
+        SPEED = 120;
       });
       onKeyPress("space", () => {
         if (player.isFrozen) return;
@@ -5770,6 +5831,13 @@ const Game = () => {
           player.jump();
           play("jump");
           canSquash = true;
+        }
+      });
+      onKeyDown("s", () => {
+        if (player.isFrozen) return;
+
+        if (player.isBig) {
+          player.frame = 14;
         }
       }); //ONUPDATE
 
@@ -5792,13 +5860,18 @@ const Game = () => {
           player.frame = 6;
         }
       });
-      let canSquash = false;
+      let canSquash = false; //HEADBUTT
+
       player.on("headbutt", obj => {
         if (obj.is("questionBox")) {
           if (obj.is("coinBox")) {
             let coin = level.spawn("c", obj.gridPos.sub(0, 1));
             coin.bump();
             play("coin");
+            coins += 1;
+            score += 200;
+            scoreUi.text = `SCORE: ${score}`;
+            coinUi.text = `COINS: ${coins}`;
           } else if (obj.is("mushyBox")) {
             level.spawn("M", obj.gridPos.sub(0, 1));
             play("powerUpAppears");
@@ -5808,13 +5881,30 @@ const Game = () => {
           destroy(obj);
           let box = level.spawn("!", pos);
           box.bump();
+        } else if (obj.is("brick")) {
+          if (player.isBig) {
+            let pos = obj.gridPos;
+            destroy(obj);
+            let destroyedBrick = level.spawn(",", pos);
+            destroyedBrick.bump();
+            play("dBrick");
+            destroyedBrick.use(lifespan(0.5, {
+              fade: 1
+            }));
+            score += 50;
+            scoreUi.text = `SCORE: ${score}`;
+          }
         }
-      });
+      }); //POWERUP
+
       player.onCollide("bigMushy", mushy => {
         destroy(mushy);
         play("powerUp");
         player.bigger();
-      });
+        score += 1000;
+        scoreUi.text = `SCORE: ${score}`;
+      }); //BADGUY COLLIDE
+
       player.onCollide("badGuy", baddy => {
         if (baddy.isAlive == false) return;
         if (player.isAlive == false) return;
@@ -5822,30 +5912,54 @@ const Game = () => {
         if (canSquash) {
           // Mario has jumped on the bad guy:
           baddy.squash();
+          score += 100;
+          scoreUi.text = `SCORE: ${score}`;
         } else {
           // Mario has been hurt
           if (player.isBig) {
             player.smaller();
             player.invincible();
+            play("lostBig");
           } else {
             // Mario is dead :(
-            killed();
+            if (!player.isInvulnerable) {
+              killed();
+            }
           }
         }
-      });
+      }); //CASTLE COLLIDE
+
       player.onCollide("castle", (castle, side) => {
         player.freeze();
+        music.pause();
         play("stageClear");
-        add([text("Well Done!", {
+
+        if (time >= 1) {
+          loop(.02, () => {
+            if (time > 0) {
+              time -= 1;
+              timeUI.text = `TIME: ${time}`;
+              score += 25;
+              scoreUi.text = `SCORE:${score}`;
+            }
+          });
+        }
+
+        add([text(`LEVEL ${levelId + 1} CLEARED!`, {
           size: 24
-        }), pos(toWorld(vec2(160, 120))), color(255, 255, 255), origin("center"), layer("ui")]);
-        wait(1, () => {
-          let nextLevel = levelNumber + 1;
+        }), pos(toWorld(vec2(210, 120))), color(255, 255, 255), origin("center"), layer("ui")]);
+        wait(7, () => {
+          let nextLevel = levelId + 1;
 
           if (nextLevel >= LEVELS.length) {
             go("start");
           } else {
-            go("game", nextLevel);
+            go("nextLevel", {
+              levelId: levelId + 1,
+              coins: coins,
+              score: score
+            });
+            music.play();
           }
         });
       });
@@ -5856,14 +5970,41 @@ const Game = () => {
 
         play("die");
         player.die();
-        add([text("Game Over :(", {
-          size: 24
-        }), pos(toWorld(vec2(160, 120))), color(255, 255, 255), origin("center"), layer('ui')]);
-        wait(2, () => {
+        music.pause();
+        add([text("Game Over", {
+          size: 24,
+          font: "sink"
+        }), pos(toWorld(vec2(210, 120))), color(255, 255, 255), origin("center"), layer('ui')]);
+        wait(5, () => {
           go("start");
         });
       }
-    }); //ENEMY MOVEMENT
+
+      function timer() {
+        if (player.isAlive == false || player.isFrozen == true) return;
+        wait(1, () => {
+          time -= 1;
+          timeUI.text = `TIME: ${time}`;
+        });
+
+        if (time === 50) {
+          music.pause();
+          play("timeWarn");
+          wait(3, () => {
+            music.play();
+          });
+        }
+
+        if (time === 1) {
+          killed();
+        }
+      }
+
+      loop(1, () => {
+        timer();
+      });
+    }); //END OF GAME SCENE
+    //ENEMY MOVEMENT
 
     const patrol = (distance = 100, speed = 50, dir = 1) => {
       return {
@@ -5905,6 +6046,7 @@ const Game = () => {
         squash() {
           this.isAlive = false;
           this.unuse("patrol");
+          play("squash");
           this.stop();
           this.frame = 2;
           this.area.width = 16;
@@ -5966,6 +6108,8 @@ const Game = () => {
         isBig: false,
         isFrozen: false,
         isAlive: true,
+        isInvulnerable: false,
+        invulnerability_time: 1,
 
         update() {
           if (this.isFrozen) {
@@ -6019,15 +6163,9 @@ const Game = () => {
         },
 
         invincible() {
-          area({
-            width: 0,
-            height: 0
-          });
-          timer(50, () => {
-            area({
-              width: 16,
-              height: 16
-            });
+          this.isInvulnerable = true;
+          wait(this.invulnerability_time, () => {
+            this.isInvulnerable = false;
           });
         },
 
@@ -6058,6 +6196,8 @@ const Game = () => {
         isBig: false,
         isFrozen: false,
         isAlive: true,
+        isInvulnerable: false,
+        invulnerability_time: 1,
 
         update() {
           if (this.isFrozen) {
@@ -6127,13 +6267,13 @@ const Game = () => {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     initGame();
   }, []);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "HELLO WORLD!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "PLEASE RENDER SOMETHING"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "HELLO WORLD!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "PLEASE RENDER SOMETHING"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_2__["default"], {
     component: "div",
     sx: {
       display: "flex",
       justifyContent: "center"
     }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_2__["default"], {
     component: "canvas",
     id: "main",
     sx: {
