@@ -17,6 +17,7 @@ export const Game = () => {
     loadAseprite("mario", "Mario.png", "Mario.json");
     loadAseprite("enemies", "enemies.png", "enemies.json");
     loadAseprite("luigi", "Luigi.png", "Luigi.json");
+    loadAseprite("overWorld","OverWorld.png","OverWorld.json")
     loadSprite("ground", "ground.png");
     loadSprite("questionBox", "questionBox.png");
     loadSprite("emptyBox", "emptyBox.png");
@@ -53,7 +54,7 @@ export const Game = () => {
         "                                      t                 ?                                       ",
         "                                 t    |                                                         ",
         "                           t     |    |                t                                        ",
-        "       E                   |     |    |   E   E        |                            H           ",
+        "       E     K             |     |    |   E   E        |                            H           ",
         "================     ===========================================================================",
         "================     ===========================================================================",
       ],
@@ -152,6 +153,15 @@ export const Game = () => {
         bump(40, 2, false),
         origin("bot"),
         "player1",
+      ],
+      "K":()=>[
+        sprite("overWorld",{frame:0}),
+        area(),
+        solid(),
+        cleanup(),
+        // lifespan(0.4,{fade:0.01}),
+        origin("bot"),
+        "brickExplode"
       ],
       "o": () => [
         sprite("luigi", { frame: 0 }),
