@@ -33,6 +33,8 @@ export const Game = () => {
     loadSprite("background","blackBackground.webp")
     loadSprite("logo","Super_Mario_Bros._Logo.svg.png")
     loadSprite("oneUp","bigMushy.png")
+    loadSprite("lava","lava4.png")
+    loadSprite("lavaJump","lavaJump2.gif")
 
     //mario sounds
     loadSound("die","smb_mariodie.wav");
@@ -48,11 +50,10 @@ export const Game = () => {
     loadSound("timeWarn", "smb_warning.wav")
     loadSound("win","smb_world_clear.wav")
     loadSound("oneUp","smb_1-up.wav")
+    loadSound("castle","Castle.mp3")
+    loadSound("pipeWorld","Pipe_Maze.mp3")
     //main soundtrack
-    const music = play("main",{
-      volume:0.1,
-      loop:true
-    })
+
 
 //LEVELS
     const LEVELS = [
@@ -75,23 +76,42 @@ export const Game = () => {
         "================     ==   ===   ===  ======================                    ===      ==============     |    |    |    ====      ==============                ==========  ",
       ],
       [
-        "                                                                                                                                                                              ",
-        "                                                                                                                                                                              ",
-        "                                                                                                                                                                              ",
-        "                                       ?                                                                                                                                      ",
-        "                                                                                                                                                                              ",
-        "                                   -?-                                                                                                                                        ",
-        "                                                                                                                                                                              ",
-        "      -?-b-                  -?-                                                                                                                                              ",
-        "                                                                                                                                                                              ",
-        "                                                                                                                                                                              ",
-        "                                                                                                                                                                              ",
-        "                                                                                                                                                                              ",
-        "       _                                            _                                                                                                                         ",
-        "       |                            H               |          E    E                                                                                                         ",
-        "================     =====================================================                                                                                 ===================",
-        "================     =====================================================                                                                                 ===================",
+        "                                                                                                                                                                            ",
+        "                                                                                                                                                                            ",
+        "                            ?1??                                                                ---------               B                                                   ",
+        "                                                                                                                       1?b                        t t t t t t               ",
+        "   b?                         B                                                                                                                   | | | | | |               ",
+        "                            ----                      t                                 t                                                         | | | | | |               ",
+        "                                                      |                                 |                                                         | | | | | |               ",
+        "      -?-?-                                     t     |                                 |                     ----                          t     | | | | | |           H   ",
+        "                                                |     |                         t       |                                                   |     | | | | | | ?       ===== ",
+        "                    ------                t     |     |                         |       |                            -                t     |     | | | | | |         ===== ",
+        "              t                           |     |     |                         |       |                                -            |     |     | | | | | |         ===== ",
+        "            t |                           |     |     |                 t       |       |        1111                  -        t     |     |     | | | | | | t t t t ===== ",
+        "          t | |                       t   |     |     |   E E  E E  E   |       |       |                                       |     |     |     | | | | | | | | | | ===== ",
+        "t t t t t | | |             t   t     |   |     |     | t t t t t t t t |       |       |                                       |     |     |     | | | | | | | | | | ===== ",
+        "| | | | | | | |             |   |     |   |     |     | | | | | | | | | |       |       |                                       |     |     |     | | | | | | | | | | ===== ",
+        "| | | | | | | |             |   |     |   |     |     | | | | | | | | | |       |       |                                       |     |     |     | | | | | | | | | | ===== ",
       ],
+      [
+        "                                                                                                                                                                            ",
+        "                                                                                                                                                                            ",
+        "                                                                                                                                                                            ",
+        "                                                                                                                                                                            ",
+        "                                                                                                                                                                            ",
+        "                                                                                                                                                                            ",
+        "                                                                                                                                                                            ",
+        "                                                                                                                                                                            ",
+        "                                                                                                                                                                            ",
+        "                                                                                                                                                                            ",
+        "                                                                                                                                                                            ",
+        "                                                                                                                                                                            ",
+        "                                                                                                                                                                            ",
+        "            J                                                                                                                                                               ",
+        "                            H                                                                                                                                               ",
+        "============                                                                             ",
+        "============ L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L L============",
+      ]
     ];
 
     //SPRITES SETUP
@@ -100,6 +120,7 @@ export const Game = () => {
       height: 16,
       pos: vec2(0, 0),
       "=": () => [sprite("ground"), area(), solid(), origin("bot"), "ground"],
+      "L": () => [sprite("lava"), area(), solid(), origin("bot"), "lava"],
       "-": () => [sprite("brick"), area(), solid(), origin("bot"), "brick"],
       "H": () => [
         sprite("castle"),
@@ -241,6 +262,15 @@ export const Game = () => {
         area(),
         throwHammer(25,1.75,false),
         "hammer"
+      ],
+      "J":()=>[
+        sprite("lavaJump"),
+        area({ width: 16, height: 16 }),
+        body({jumpForce:600}),
+        solid(),
+        bump(50,3,false),
+        lavaJump(),
+        "hammer"
       ]
     };
 
@@ -256,7 +286,7 @@ export const Game = () => {
         go("game");
       });
     });
-    go("start");
+    // go("start");
     // scene("gameOver", ()=>{
     //   add()
     // })
@@ -386,11 +416,28 @@ export const Game = () => {
 
       const level = addLevel(LEVELS[levelId], spriteMap);
 
+      layers([
+        "background",
+        "game"
+      ],"game");
+      if(levelId === 2){
+        add([
+          sprite("background"),
+          layer("background")
+        ])
+      }
+      
+      
       add([sprite("cloud"), pos(20, 50), layer("bg")]);
-      add([sprite("hill"), pos(32, 208), layer("bg"), origin("bot")]);
-      add([sprite("shrubbery"), pos(200, 208), layer("bg"), origin("bot")]);
+      add([sprite("cloud"), pos(290, 50), layer("bg")]);
+      add([sprite("cloud"), pos(600, 50), layer("bg")]);
+      add([sprite("cloud"), pos(775, 80), layer("bg")]);
+      add([sprite("cloud"), pos(1000, 20), layer("bg")]);
+      add([sprite("cloud"), pos(1200, 50), layer("bg")]);
+
+      
       add([
-        text(`Level ${levelId + 1}`, { size: 24 }),
+        text(`Level ${levelId + 1}`, { size: 24, font: "sink" }),
         pos(vec2(200, 120)),
         color(255, 255, 255),
         origin("center"),
@@ -399,7 +446,30 @@ export const Game = () => {
       ]);
 
       const player = level.spawn("p", 1, 10);
-      music.play();
+
+      
+
+      //MUSIC CHOICES
+      let music;
+      const volume = 0.1
+      if(levelId === 0){
+        music = play("main",{
+          volume:volume,
+          loop:true
+        })
+      } else if(levelId === 1){
+        music =
+        play("pipeWorld",{
+          volume:volume,
+          loop:true
+      })} else if(levelId ===2){
+        music =
+        play("castle",{
+          volume:volume,
+          loop:true
+        })
+      }
+      
 
       
   //MARIO/LUIGI MOVEMENTS
@@ -577,29 +647,20 @@ export const Game = () => {
         }
       }
     })
-//HammerBro COLLIDE
-    // player.onCollide("hammerBro", (bro) => {
-    //   if (bro.isAlive == false) return;
-    //   if (player.isAlive == false) return;
-    //   if (canSquash) {
-    //     // Mario has jumped on the bad guy:
-    //     bro.squash();
-    //     score+=100
-    //   scoreUi.text = `SCORE: ${score}`
-    //   } else {
-    //     // Mario has been hurt
-    //     if (player.isBig) {
-    //       player.smaller();
-    //       player.invincible();
-    //       play("lostBig")
-    //     } else {
-    //       // Mario is dead :(
-    //       if(!player.isInvulnerable){
-    //         killed();
-    //       }
-    //     }
-    //   }
-    // });
+    player.onCollide("lava",(lava)=>{
+      if(player.isAlive==false)return;
+      if(lives>1){
+        lives-=1;
+        play("die")
+        player.die();
+        music.pause();
+        wait(4,()=>go("game",{levelId:levelId,score:score,coins:coins,lives:lives}))
+      } else{
+        livesUi.text = "LIVES: 0"
+        killed();
+      }
+    })
+
     //HAMMERBRO UPDATE
     onUpdate("hammerBro",(hammerBro)=>{
       
@@ -607,7 +668,7 @@ export const Game = () => {
           hammerBro.hammerCount +=1
           let hammer = level.spawn("N",hammerBro.gridPos.sub(0,3))
           hammer.throwHammer()
-          hammer.use(lifespan(1.5,{fade:0.1}))
+          hammer.use(lifespan(4,{fade:0.1}))
           hammerBro.throwHammer=false;
         }
       
@@ -623,7 +684,6 @@ export const Game = () => {
       play("stageClear")
       if(time>=1){
         loop(.05,()=>{
-          console.log(time)
           if(time>0){
             time -=5;
           timeUI.text = `TIME: ${time}`
@@ -648,7 +708,6 @@ export const Game = () => {
           go("start");
         } else{
           go("nextLevel",{levelId: levelId +1, coins: coins, score: score, lives:lives})
-          music.play()
         }
       })
     })
@@ -695,9 +754,11 @@ export const Game = () => {
     loop(1,()=>{
       timer()
     })
+    music.play()
     });
 //END OF GAME SCENE
 
+go("game",{lives:3,levelId:2,coins:0,score:0})
 
 //ENEMY MOVEMENT
     const patrol =(distance = 100,speed=50,dir=1)=>{
@@ -725,6 +786,20 @@ export const Game = () => {
       }
     }
 
+    const lavaJump = ()=>{
+      return{
+        id:"lavaJump",
+      require:["pos","area","sprite"],
+      startingPos: vec2(0,0),
+      add(){
+        this.startingPos = this.pos
+        console.log(this.startingPos)
+      },
+      update(){
+        this.isGrounded() ? this.jump() : null
+      }
+    }
+    }
 
     const hammerBro=()=>{
       return{
@@ -742,7 +817,7 @@ export const Game = () => {
           this.use(lifespan(0.5,{fade:0.1}))
         },
         update(){
-          this.isGrounded() ? wait(.2,()=>this.jump(), this.hammerCount =0) : null;
+          this.isGrounded() ? wait(.6,()=>this.jump(), this.hammerCount =0) : null;
           wait(2, ()=>this.throwHammer=true)
         }
       }
@@ -992,6 +1067,7 @@ const luigi = ()=>{
           sx={{
             width: "610px",
             height: "350px",
+            border:"solid black 1px"
           }}
         />
       </Box>
