@@ -38,7 +38,6 @@ export const Game = () => {
     loadSprite("lava","lava4.png")
     loadSprite("lavaJump","lavaJump2.gif")
     loadSprite("starryNight","nightSky.jpeg")
-    loadSprite("phanto","phanto.gif")
     loadSprite("win","winbackground.jpeg")
     loadSprite("logo","Logo.svg.png")
     //mario sounds
