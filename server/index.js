@@ -1,16 +1,9 @@
 const PORT = process.env.PORT || 1337;
 const app = require("./app");
-// const seed = require("../script/seeds");
 
 const init = async () => {
   try {
-    // if (process.env.SEED === "true") {
-    //   await seed();
-    // } else {
-    //   await db.sync();
-    // }
-    // start listening (and create a 'server' object representing our server)
-    app.listen(PORT, () => console.log(`Mixing it up on port ${PORT}`));
+    app.listen(PORT, () => console.log(`ALL SERVERS REPORTING FOR DUTY ON ${PORT}`));
   } catch (ex) {
     console.log(ex);
   }

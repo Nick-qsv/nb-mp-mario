@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import kaboom from "kaboom";
-import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import { Footer } from "./Components/Footer";
 import { NavBar } from "./Components/NavBar";

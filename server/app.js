@@ -15,9 +15,7 @@ app.use(express.json());
 //cors to allow requests from different origins
 app.use(cors({ origin: true }));
 
-// auth and api routes
-// app.use("/auth", require("./auth"));
-// app.use("/api", require("./api"));
+
 app.use(express.static(path.join(__dirname, "..", "public")));
 
 app.get("/", (req, res) =>
