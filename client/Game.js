@@ -3,6 +3,9 @@ import kaboom from "kaboom";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import { Footer } from "./Components/Footer";
+import { NavBar } from "./Components/NavBar";
+import { Controls } from "./Components/Controls";
+
 
 export const Game = () => {
   const initGame = () => {
@@ -32,13 +35,13 @@ export const Game = () => {
     loadSprite("castle", "castle.png");
     loadSprite("dBrick","DeBrick.png")
     loadSprite("background","blackBackground.webp")
-    loadSprite("logo","Super_Mario_Bros._Logo.svg.png")
     loadSprite("oneUp","bigMushy.png")
     loadSprite("lava","lava4.png")
     loadSprite("lavaJump","lavaJump2.gif")
     loadSprite("starryNight","nightSky.jpeg")
     loadSprite("phanto","phanto.gif")
     loadSprite("win","winbackground.jpeg")
+    loadSprite("logo","Logo.svg.png")
     //mario sounds
     loadSound("die","smb_mariodie.wav");
     loadSound("coin","smb_coin.wav");
@@ -279,11 +282,28 @@ export const Game = () => {
 
     //START SCENE
     scene("start", () => {
+      layers([
+        "background",
+        "start"
+      ],"start");
       add([
-        text("Press enter to start", { size: 24, font:"sink" }),
-        pos(vec2(200, 120)),
+        sprite("starryNight"),
+        layer("background"),
+        scale(0.35)
+      ])
+      add([
+        sprite("logo"),
+        layer("background"),
+        scale(0.25),
         origin("center"),
-        color(255, 255, 255),
+        pos(vec2(200,80))
+      ])
+
+      add([
+        text(`Press ENTER to start`,{size: 12, font:"sink"}),
+        pos(vec2(200,190)),
+        origin("center"),
+        color(255,255,255),
       ]);
       onKeyRelease("enter", () => {
         go("game");
@@ -399,7 +419,7 @@ export const Game = () => {
   
 
     //GAME SCENE
-    scene("game", ({ levelId, coins,score,lives } = { levelId: 0, coins: 0, score:0,lives:3 }) => {
+    scene("game", ({ levelId, coins,score,lives } = { levelId: 0, coins: 0, score:0,lives:3}) => {
       layers(["bg", "game", "ui"], "game");
 
       let time = 400;
@@ -495,7 +515,7 @@ export const Game = () => {
 
       //MUSIC CHOICES
       let music;
-      const volume = 0.1
+      const volume = 0.5
       if(levelId === 0){
         music = play("main",{
           volume:volume,
@@ -761,6 +781,7 @@ export const Game = () => {
         if(nextLevel >= LEVELS.length){
           go("win",{levelId:levelId,coins:coins,score:score,lives:lives});
         } else{
+
           go("nextLevel",{levelId: levelId +1, coins: coins, score: score, lives:lives})
         }
       })
@@ -811,6 +832,7 @@ export const Game = () => {
     music.play()
     });
 //END OF GAME SCENE
+volume(0.2)
 
 // go("game",{lives:3,levelId:2,coins:0,score:0})
 // go("win",{lives:1,levelId:2,coins:20,score:20000})
@@ -1039,68 +1061,74 @@ const luigi = ()=>{
   return {
     id: "luigi",
     require: ["body", "area", "sprite", "bump"],
-    smallAnimation: "Running",
-    bigAnimation: "RunningBig",
-    smallStopFrame: 0,
-    bigStopFrame: 8,
-    smallJumpFrame: 5,
-    bigJumpFrame: 13,
-    isBig: false,
-    isFrozen: false,
-    isAlive: true,
-    isInvulnerable:false,
-    invulnerability_time:1,
-    update() {
-      if (this.isFrozen) {
-        this.standing();
-        return;
-      }
-
-      if (!this.isGrounded()) {
-        this.jumping();
-      }
-      else {
-        if (isKeyDown("left") || isKeyDown("right")) {
-          this.running();
-        } else {
-          this.standing();
+        smallAnimation: "Running",
+        bigAnimation: "RunningBig",
+        smallStopFrame: 0,
+        bigStopFrame: 8,
+        smallJumpFrame: 5,
+        bigJumpFrame: 13,
+        isBig: false,
+        isFrozen: false,
+        isAlive: true,    
+        isInvulnerable:false,
+        invulnerability_time:1,
+        update() {
+          if (this.isFrozen) {
+            this.standing();
+            return;
+          }
+  
+          if (!this.isGrounded()) {
+            this.jumping();
+          }
+          else {
+            if (isKeyDown("a") || isKeyDown("d")) {
+              this.running();
+            } else {
+              this.standing();
+            }
+          }
+        },
+        bigger() {
+          this.isBig = true;
+          this.area.width = 24;
+          this.area.height = 32;
+        },
+        smaller() {
+          this.isBig = false;
+          this.area.width = 16;
+          this.area.height = 16;
+        },
+        standing() {
+          this.stop();
+          this.frame = this.isBig ? this.bigStopFrame : this.smallStopFrame;
+        },
+        jumping() {
+          this.stop();
+          this.frame = this.isBig ? this.bigJumpFrame : this.smallJumpFrame;
+        },
+        running() {
+          const animation = this.isBig ? this.bigAnimation : this.smallAnimation;
+          if (this.curAnim() !== animation) {
+            this.play(animation);
+          }
+        },
+        freeze() {
+          this.isFrozen = true;
+        },
+        invincible(){
+          this.isInvulnerable = true;
+          wait(this.invulnerability_time, ()=>{
+            this.isInvulnerable = false;
+          })
+        },
+        die() {
+          this.unuse("body");
+          this.bump();
+          this.isAlive = false;
+          this.freeze();
+          this.use(lifespan(1, { fade: 1 }));
         }
-      }
-    },
-    bigger() {
-      this.isBig = true;
-      this.area.width = 24;
-      this.area.height = 32;
-    },
-    smaller() {
-      this.isBig = false;
-      this.area.width = 16;
-      this.area.height = 16;
-    },
-    standing() {
-      this.stop();
-      this.frame = this.isBig ? this.bigStopFrame : this.smallStopFrame;
-    },
-    jumping() {
-      this.stop();
-      this.frame = this.isBig ? this.bigJumpFrame : this.smallJumpFrame;
-    },
-    running() {
-      const animation = this.isBig ? this.bigAnimation : this.smallAnimation;
-      if (this.curAnim() !== animation) {
-        this.play(animation);
-      }
-    },
-    freeze() {
-      this.isFrozen = true;
-    },
-    die() {
-      this.unuse("body");
-      this.bump();
-      this.isAlive = false;
-      this.freeze();
-      this.use(lifespan(1, { fade: 1 }));
-    }
   }
 }
 
@@ -1110,10 +1138,13 @@ const luigi = ()=>{
   useEffect(() => {
     initGame();
   }, []);
+
+
   return (
     <div>
-      <h1>HELLO WORLD!</h1>
-      <h1>PLEASE RENDER SOMETHING</h1>
+      <NavBar/>
+      <Box component="h4" sx={{display:"flex", justifyContent:"center"}}>To start the game, click the screen then hit enter</Box>
+      <Controls />  
       <Box component="div" sx={{ display: "flex", justifyContent: "center", minHeight:"70vh" }}>
         <Box
           component="canvas"

@@ -8425,6 +8425,147 @@ function useIsFocusVisible() {
 
 /***/ }),
 
+/***/ "./client/Components/Controls.js":
+/*!***************************************!*\
+  !*** ./client/Components/Controls.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Controls": () => (/* binding */ Controls)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _mui_material_Box__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mui/material/Box */ "./node_modules/@mui/material/Box/Box.js");
+
+
+
+
+const Controls = () => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    component: "div",
+    sx: {
+      display: "flex",
+      marginBottom: "25px",
+      justifyContent: "center",
+      marginTop: "25px"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    component: "div",
+    sx: {
+      display: "flex",
+      justifyContent: "flex-start",
+      flexDirection: "column"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    component: "h4",
+    sx: {
+      marginBottom: "4px",
+      marginTop: "0px",
+      marginLeft: "20px"
+    }
+  }, "Left"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    component: "img",
+    src: "wasd/computer_key_A.png",
+    sx: {
+      height: "60px",
+      width: "60px",
+      marginLeft: "20px"
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    component: "div",
+    sx: {
+      display: "flex",
+      justifyContent: "flex-start",
+      flexDirection: "column"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    component: "h4",
+    sx: {
+      marginBottom: "4px",
+      marginTop: "0px",
+      marginLeft: "20px"
+    }
+  }, "Jump"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    component: "img",
+    src: "wasd/computer_key_W.png",
+    sx: {
+      height: "60px",
+      width: "60px",
+      marginLeft: "20px"
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    component: "div",
+    sx: {
+      display: "flex",
+      justifyContent: "flex-start",
+      flexDirection: "column"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    component: "h4",
+    sx: {
+      marginBottom: "4px",
+      marginTop: "0px",
+      marginLeft: "20px"
+    }
+  }, "Right"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    component: "img",
+    src: "wasd/computer_key_D.png",
+    sx: {
+      height: "60px",
+      width: "60px",
+      marginLeft: "20px"
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    component: "div",
+    sx: {
+      display: "flex",
+      justifyContent: "flex-start",
+      flexDirection: "column"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    component: "h4",
+    sx: {
+      marginBottom: "4px",
+      marginTop: "0px",
+      marginLeft: "20px"
+    }
+  }, "Jump"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    component: "img",
+    src: "wasd/computer_key_Space_bar.png",
+    sx: {
+      height: "60px",
+      width: "220px",
+      marginLeft: "20px"
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    component: "div",
+    sx: {
+      display: "flex",
+      justifyContent: "flex-start",
+      flexDirection: "column"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    component: "h4",
+    sx: {
+      marginBottom: "4px",
+      marginTop: "0px",
+      marginLeft: "20px"
+    }
+  }, "Accelerate"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    component: "img",
+    src: "wasd/computer_key_Shift.png",
+    sx: {
+      height: "60px",
+      width: "130px",
+      marginLeft: "20px"
+    }
+  }))));
+};
+
+/***/ }),
+
 /***/ "./client/Components/Footer.js":
 /*!*************************************!*\
   !*** ./client/Components/Footer.js ***!
@@ -8521,7 +8662,7 @@ const Footer = () => {
         sm: "none",
         md: "flex"
       },
-      height: "50px",
+      height: "55px",
       width: "220px",
       position: "absolute",
       bottom: "30px",
@@ -8539,6 +8680,49 @@ const Footer = () => {
 
 /***/ }),
 
+/***/ "./client/Components/NavBar.js":
+/*!*************************************!*\
+  !*** ./client/Components/NavBar.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "NavBar": () => (/* binding */ NavBar)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _mui_material_Box__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mui/material/Box */ "./node_modules/@mui/material/Box/Box.js");
+/* harmony import */ var _mui_material_Typography__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @mui/material/Typography */ "./node_modules/@mui/material/Typography/Typography.js");
+
+
+
+const NavBar = () => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    component: "div",
+    sx: {
+      backgroundColor: "black",
+      height: "50px",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    component: "div",
+    sx: {
+      margin: "0px",
+      marginTop: "10px"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    variant: "h5",
+    color: "white",
+    align: "center",
+    fontFamily: "Plumber"
+  }, "SUPER MARIO BROS.")));
+};
+
+/***/ }),
+
 /***/ "./client/Game.js":
 /*!************************!*\
   !*** ./client/Game.js ***!
@@ -8552,8 +8736,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var kaboom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! kaboom */ "./node_modules/kaboom/dist/kaboom.mjs");
-/* harmony import */ var _mui_material_Box__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mui/material/Box */ "./node_modules/@mui/material/Box/Box.js");
+/* harmony import */ var _mui_material_Box__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material/Box */ "./node_modules/@mui/material/Box/Box.js");
 /* harmony import */ var _Components_Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Components/Footer */ "./client/Components/Footer.js");
+/* harmony import */ var _Components_NavBar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Components/NavBar */ "./client/Components/NavBar.js");
+/* harmony import */ var _Components_Controls__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Components/Controls */ "./client/Components/Controls.js");
+
+
 
 
 
@@ -8587,13 +8775,13 @@ const Game = () => {
     loadSprite("castle", "castle.png");
     loadSprite("dBrick", "DeBrick.png");
     loadSprite("background", "blackBackground.webp");
-    loadSprite("logo", "Super_Mario_Bros._Logo.svg.png");
     loadSprite("oneUp", "bigMushy.png");
     loadSprite("lava", "lava4.png");
     loadSprite("lavaJump", "lavaJump2.gif");
     loadSprite("starryNight", "nightSky.jpeg");
     loadSprite("phanto", "phanto.gif");
-    loadSprite("win", "winbackground.jpeg"); //mario sounds
+    loadSprite("win", "winbackground.jpeg");
+    loadSprite("logo", "Logo.svg.png"); //mario sounds
 
     loadSound("die", "smb_mariodie.wav");
     loadSound("coin", "smb_coin.wav");
@@ -8686,10 +8874,13 @@ const Game = () => {
     }; //START SCENE
 
     scene("start", () => {
-      add([text("Press enter to start", {
-        size: 24,
+      layers(["background", "start"], "start");
+      add([sprite("starryNight"), layer("background"), scale(0.35)]);
+      add([sprite("logo"), layer("background"), scale(0.25), origin("center"), pos(vec2(200, 80))]);
+      add([text(`Press ENTER to start`, {
+        size: 12,
         font: "sink"
-      }), pos(vec2(200, 120)), origin("center"), color(255, 255, 255)]);
+      }), pos(vec2(200, 190)), origin("center"), color(255, 255, 255)]);
       onKeyRelease("enter", () => {
         go("game");
       });
@@ -8840,7 +9031,7 @@ const Game = () => {
       const player = level.spawn("p", 1, 10); //MUSIC CHOICES
 
       let music;
-      const volume = 0.1;
+      const volume = 0.5;
 
       if (levelId === 0) {
         music = play("main", {
@@ -9196,7 +9387,8 @@ const Game = () => {
       });
       music.play();
     }); //END OF GAME SCENE
-    // go("game",{lives:3,levelId:2,coins:0,score:0})
+
+    volume(0.2); // go("game",{lives:3,levelId:2,coins:0,score:0})
     // go("win",{lives:1,levelId:2,coins:20,score:20000})
     //ENEMY MOVEMENT
 
@@ -9485,7 +9677,7 @@ const Game = () => {
           if (!this.isGrounded()) {
             this.jumping();
           } else {
-            if (isKeyDown("left") || isKeyDown("right")) {
+            if (isKeyDown("a") || isKeyDown("d")) {
               this.running();
             } else {
               this.standing();
@@ -9527,6 +9719,13 @@ const Game = () => {
           this.isFrozen = true;
         },
 
+        invincible() {
+          this.isInvulnerable = true;
+          wait(this.invulnerability_time, () => {
+            this.isInvulnerable = false;
+          });
+        },
+
         die() {
           this.unuse("body");
           this.bump();
@@ -9544,14 +9743,20 @@ const Game = () => {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     initGame();
   }, []);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "HELLO WORLD!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "PLEASE RENDER SOMETHING"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Components_NavBar__WEBPACK_IMPORTED_MODULE_3__.NavBar, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    component: "h4",
+    sx: {
+      display: "flex",
+      justifyContent: "center"
+    }
+  }, "To start the game, click the screen then hit enter"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Components_Controls__WEBPACK_IMPORTED_MODULE_4__.Controls, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_5__["default"], {
     component: "div",
     sx: {
       display: "flex",
       justifyContent: "center",
       minHeight: "70vh"
     }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_5__["default"], {
     component: "canvas",
     id: "main",
     sx: {
@@ -9559,7 +9764,7 @@ const Game = () => {
       height: "350px",
       border: "solid black 1px"
     }
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_5__["default"], {
     component: "div",
     sx: {
       minHeight: "40px"

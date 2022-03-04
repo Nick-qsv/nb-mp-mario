@@ -64,7 +64,7 @@ export const Footer = () => {
           src="https://i.postimg.cc/525Lfjnz/1-18.jpg"
           sx={{
             display: { xs: "none", sm: "none", md: "flex" },
-            height: "50px",
+            height: "55px",
             width: "220px",
             position: "absolute",
             bottom: "30px",
