@@ -103,7 +103,7 @@ export const Game = () => {
         "                                                                                                                                                                            ",
         "                                                                                                                                                       ???????              ",
         "                                           ------    1  1  1                                 b11                                                                            ",
-        "                                                                                                                                                         B B                ",
+        "                                                                                                                                                        BB                  ",
         "                                                                                               B                                                       -------              ",
         "   ???                        -------                            t                           ----                       1    1                                              ",
         "                                                                 |                                                -                 1                                       ",
@@ -755,9 +755,9 @@ export const Game = () => {
       music.pause();
       play("stageClear")
       if(time>=1){
-        loop(.1,()=>{
+        loop(.2,()=>{
           if(time>0){
-            time -=8;
+            time -=7;
           timeUI.text = `TIME: ${time}`
           score += 200
           scoreUi.text = `SCORE:${score}`
