@@ -8457,7 +8457,7 @@ const Controls = () => {
       flexDirection: "column"
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    component: "h4",
+    component: "h2",
     sx: {
       marginBottom: "4px",
       marginTop: "0px",
@@ -8467,8 +8467,8 @@ const Controls = () => {
     component: "img",
     src: "wasd/computer_key_A.png",
     sx: {
-      height: "60px",
-      width: "60px",
+      height: "80px",
+      width: "80px",
       marginLeft: "20px"
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -8479,7 +8479,7 @@ const Controls = () => {
       flexDirection: "column"
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    component: "h4",
+    component: "h2",
     sx: {
       marginBottom: "4px",
       marginTop: "0px",
@@ -8489,8 +8489,8 @@ const Controls = () => {
     component: "img",
     src: "wasd/computer_key_W.png",
     sx: {
-      height: "60px",
-      width: "60px",
+      height: "80px",
+      width: "80px",
       marginLeft: "20px"
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -8501,7 +8501,7 @@ const Controls = () => {
       flexDirection: "column"
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    component: "h4",
+    component: "h2",
     sx: {
       marginBottom: "4px",
       marginTop: "0px",
@@ -8511,8 +8511,8 @@ const Controls = () => {
     component: "img",
     src: "wasd/computer_key_D.png",
     sx: {
-      height: "60px",
-      width: "60px",
+      height: "80px",
+      width: "80px",
       marginLeft: "20px"
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -8523,7 +8523,7 @@ const Controls = () => {
       flexDirection: "column"
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    component: "h4",
+    component: "h2",
     sx: {
       marginBottom: "4px",
       marginTop: "0px",
@@ -8533,8 +8533,8 @@ const Controls = () => {
     component: "img",
     src: "wasd/computer_key_Space_bar.png",
     sx: {
-      height: "60px",
-      width: "220px",
+      height: "80px",
+      width: "400px",
       marginLeft: "20px"
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -8545,7 +8545,7 @@ const Controls = () => {
       flexDirection: "column"
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    component: "h4",
+    component: "h2",
     sx: {
       marginBottom: "4px",
       marginTop: "0px",
@@ -8555,8 +8555,8 @@ const Controls = () => {
     component: "img",
     src: "wasd/computer_key_Shift.png",
     sx: {
-      height: "60px",
-      width: "130px",
+      height: "80px",
+      width: "190px",
       marginLeft: "20px"
     }
   }))));
@@ -8577,12 +8577,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _mui_material_Box__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @mui/material/Box */ "./node_modules/@mui/material/Box/Box.js");
-/* harmony import */ var _mui_material_Typography__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mui/material/Typography */ "./node_modules/@mui/material/Typography/Typography.js");
-/* harmony import */ var _mui_material_Link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @mui/material/Link */ "./node_modules/@mui/material/Link/Link.js");
+/* harmony import */ var _mui_material_Typography__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/material/Typography */ "./node_modules/@mui/material/Typography/Typography.js");
+/* harmony import */ var _mui_material_Link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mui/material/Link */ "./node_modules/@mui/material/Link/Link.js");
 /* harmony import */ var _mui_material_styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mui/material/styles */ "./node_modules/@mui/material/styles/createTheme.js");
-/* harmony import */ var _mui_material_styles__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/material/styles */ "./node_modules/@mui/system/esm/ThemeProvider/ThemeProvider.js");
-/* harmony import */ var _mui_icons_material_LinkedIn__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/icons-material/LinkedIn */ "./node_modules/@mui/icons-material/LinkedIn.js");
-/* harmony import */ var _mui_icons_material_GitHub__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/icons-material/GitHub */ "./node_modules/@mui/icons-material/GitHub.js");
+/* harmony import */ var _mui_material_styles__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material/styles */ "./node_modules/@mui/system/esm/ThemeProvider/ThemeProvider.js");
+/* harmony import */ var _mui_icons_material_LinkedIn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @mui/icons-material/LinkedIn */ "./node_modules/@mui/icons-material/LinkedIn.js");
+/* harmony import */ var _mui_icons_material_GitHub__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/icons-material/GitHub */ "./node_modules/@mui/icons-material/GitHub.js");
 
 
 
@@ -8601,8 +8601,8 @@ const theme = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_1__["default"])({
     values: {
       xs: 0,
       sm: 200,
-      md: 640,
-      lg: 900,
+      md: 1040,
+      lg: 1200,
       xl: 1536
     }
   }
@@ -8616,23 +8616,20 @@ function Copyright() {
       alignItems: "center",
       justifyContent: "center"
     }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Typography__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    variant: "body2",
-    color: "white",
-    align: "center",
-    fontFamily: "Plumber"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Link__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Link__WEBPACK_IMPORTED_MODULE_3__["default"], {
     color: "inherit",
     href: "https://www.linkedin.com/in/nicolas-baez/"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_icons_material_LinkedIn__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_icons_material_LinkedIn__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    fontSize: "large",
     style: {
       color: "white",
       marginRight: "10"
     }
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Link__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Link__WEBPACK_IMPORTED_MODULE_3__["default"], {
     color: "inherit",
     href: "https://github.com/Nick-qsv"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_icons_material_GitHub__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_icons_material_GitHub__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    fontSize: "large",
     style: {
       color: "white"
     }
@@ -8640,7 +8637,7 @@ function Copyright() {
 }
 
 const Footer = () => {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_styles__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_styles__WEBPACK_IMPORTED_MODULE_6__["default"], {
     theme: theme
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_2__["default"], {
     sx: {
@@ -8660,19 +8657,20 @@ const Footer = () => {
         sm: "none",
         md: "flex"
       },
-      height: "55px",
-      width: "220px",
+      height: "95px",
+      width: "340px",
       position: "absolute",
       bottom: "30px",
-      left: "30px"
+      left: "60px"
     }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Typography__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    variant: "subtitle1",
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Typography__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    variant: "h4",
     align: "center",
     color: "white",
     component: "p",
     fontFamily: "Plumber",
-    letterSpacing: ".1rem"
+    letterSpacing: ".1rem",
+    marginTop: "10px"
   }, "NICOLAS BAEZ"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Copyright, null)));
 };
 
@@ -8699,8 +8697,9 @@ const NavBar = () => {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_1__["default"], {
     component: "div",
     sx: {
+      zIndex: 2,
       backgroundColor: "black",
-      height: "50px",
+      height: "100px",
       display: "flex",
       justifyContent: "center",
       alignItems: "center"
@@ -8708,11 +8707,11 @@ const NavBar = () => {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_1__["default"], {
     component: "div",
     sx: {
-      margin: "0px",
-      marginTop: "10px"
+      marginTop: "20px",
+      marginTop: "20px"
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    variant: "h5",
+    variant: "h3",
     color: "white",
     align: "center",
     fontFamily: "Plumber"
@@ -8954,7 +8953,7 @@ const Game = () => {
         size: 16,
         font: "sink"
       }), pos(vec2(200, 120)), origin("center"), color(255, 255, 255)]);
-      add([text(`You collected ${coins}/35 coins!`, {
+      add([text(`You collected ${coins} coins!`, {
         size: 16,
         font: "sink"
       }), pos(vec2(200, 80)), origin("center"), color(255, 255, 255)]);
@@ -8980,7 +8979,7 @@ const Game = () => {
       lives: 3
     }) => {
       layers(["bg", "game", "ui"], "game");
-      let time = 400;
+      let time = 200;
       const scoreUi = add([text(`SCORE: ${score}`, {
         size: 10,
         font: "sinko"
@@ -9373,7 +9372,16 @@ const Game = () => {
           });
         }
 
-        if (time === 1) {
+        if (time === 1 && lives > 1) {
+          music.pause();
+          play("die");
+          wait(4, () => go("game", {
+            levelId: levelId,
+            score: score,
+            coins: coins,
+            lives: lives - 1
+          }));
+        } else if (time === 1 && lives === 1) {
           killed();
         }
       }
@@ -9740,7 +9748,7 @@ const Game = () => {
     initGame();
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Components_NavBar__WEBPACK_IMPORTED_MODULE_3__.NavBar, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    component: "h4",
+    component: "h2",
     sx: {
       display: "flex",
       justifyContent: "center"
@@ -9750,15 +9758,15 @@ const Game = () => {
     sx: {
       display: "flex",
       justifyContent: "center",
-      minHeight: "70vh"
+      minHeight: "80vh"
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_5__["default"], {
     component: "canvas",
     id: "main",
     sx: {
-      width: "610px",
-      height: "350px",
-      border: "solid black 1px"
+      width: "1024px",
+      height: "540px",
+      border: "solid black 3px"
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_5__["default"], {
     component: "div",

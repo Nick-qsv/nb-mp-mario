@@ -398,7 +398,7 @@ export const Game = () => {
         color(255,255,255),
       ])
       add([
-        text(`You collected ${coins}/35 coins!`,{size: 16, font:"sink"}),
+        text(`You collected ${coins} coins!`,{size: 16, font:"sink"}),
         pos(vec2(200,80)),
         origin("center"),
         color(255,255,255),
@@ -420,7 +420,7 @@ export const Game = () => {
     scene("game", ({ levelId, coins,score,lives } = { levelId: 0, coins: 0, score:0,lives:3}) => {
       layers(["bg", "game", "ui"], "game");
 
-      let time = 400;
+      let time = 200;
 
       const scoreUi = add([
         text(
@@ -820,8 +820,12 @@ export const Game = () => {
             music.play()
           })
         }
-        if(time === 1){
-          killed()
+        if(time === 1 && lives>1){
+          music.pause()
+          play("die")
+          wait(4,()=>go("game",{levelId:levelId,score:score,coins:coins,lives:lives-1}))
+        } else if(time ===1 && lives === 1){
+          killed();
         }
     }
     loop(1,()=>{
@@ -1141,16 +1145,16 @@ const luigi = ()=>{
   return (
     <div>
       <NavBar/>
-      <Box component="h4" sx={{display:"flex", justifyContent:"center"}}>To start the game, click the screen then hit enter</Box>
+      <Box component="h2" sx={{display:"flex", justifyContent:"center"}}>To start the game, click the screen then hit enter</Box>
       <Controls />  
-      <Box component="div" sx={{ display: "flex", justifyContent: "center", minHeight:"70vh" }}>
+      <Box component="div" sx={{ display: "flex", justifyContent: "center", minHeight:"80vh" }}>
         <Box
           component="canvas"
           id="main"
           sx={{
-            width: "610px",
-            height: "350px",
-            border:"solid black 1px"
+            width: "1024px",
+            height: "540px",
+            border:"solid black 3px"
           }}
         />
       </Box>

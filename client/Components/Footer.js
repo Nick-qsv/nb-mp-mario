@@ -17,8 +17,8 @@ const theme = createTheme({
     values: {
       xs: 0,
       sm: 200,
-      md: 640,
-      lg: 900,
+      md: 1040,
+      lg: 1200,
       xl: 1536,
     },
   },
@@ -30,17 +30,11 @@ function Copyright() {
       component={"div"}
       sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
     >
-      <Typography
-        variant="body2"
-        color="white"
-        align="center"
-        fontFamily="Plumber"
-      ></Typography>
       <Link color="inherit" href="https://www.linkedin.com/in/nicolas-baez/">
-        <LinkedInIcon style={{ color: "white", marginRight:"10" }} />
+        <LinkedInIcon fontSize="large" style={{ color: "white", marginRight:"10" }} />
       </Link>
       <Link color="inherit" href="https://github.com/Nick-qsv">
-        <GitHubIcon style={{ color: "white" }} />
+        <GitHubIcon fontSize="large" style={{ color: "white" }} />
       </Link>
     </Box>
   );
@@ -64,20 +58,21 @@ export const Footer = () => {
           src="https://i.postimg.cc/525Lfjnz/1-18.jpg"
           sx={{
             display: { xs: "none", sm: "none", md: "flex" },
-            height: "55px",
-            width: "220px",
+            height: "95px",
+            width: "340px",
             position: "absolute",
             bottom: "30px",
-            left: "30px",
+            left: "60px",
           }}
         />
         <Typography
-          variant="subtitle1"
+          variant="h4"
           align="center"
           color="white"
           component="p"
           fontFamily="Plumber"
           letterSpacing=".1rem"
+          marginTop="10px"
         >
           NICOLAS BAEZ
         </Typography>

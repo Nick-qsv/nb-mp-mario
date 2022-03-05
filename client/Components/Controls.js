@@ -16,13 +16,13 @@ export const Controls = () => {
             flexDirection: "column",
           }}
         >
-          <Box component="h4" sx={{ marginBottom: "4px", marginTop: "0px",marginLeft:"20px" }}>
+          <Box component="h2" sx={{ marginBottom: "4px", marginTop: "0px",marginLeft:"20px" }}>
             Left
           </Box>
           <Box
             component="img"
             src="wasd/computer_key_A.png"
-            sx={{ height: "60px", width: "60px",marginLeft:"20px" }}
+            sx={{ height: "80px", width: "80px",marginLeft:"20px" }}
           />
         </Box>
         <Box
@@ -33,13 +33,13 @@ export const Controls = () => {
             flexDirection: "column",
           }}
         >
-          <Box component="h4" sx={{ marginBottom: "4px", marginTop: "0px",marginLeft:"20px" }}>
+          <Box component="h2" sx={{ marginBottom: "4px", marginTop: "0px",marginLeft:"20px" }}>
             Jump
           </Box>
         <Box
           component="img"
           src="wasd/computer_key_W.png"
-          sx={{ height: "60px", width: "60px",marginLeft:"20px" }}
+          sx={{ height: "80px", width: "80px",marginLeft:"20px" }}
         />
         </Box>
         <Box
@@ -50,13 +50,13 @@ export const Controls = () => {
             flexDirection: "column",
           }}
         >
-          <Box component="h4" sx={{ marginBottom: "4px", marginTop: "0px",marginLeft:"20px" }}>
+          <Box component="h2" sx={{ marginBottom: "4px", marginTop: "0px",marginLeft:"20px" }}>
             Right
           </Box>
         <Box
           component="img"
           src="wasd/computer_key_D.png"
-          sx={{ height: "60px", width: "60px", marginLeft: "20px" }}
+          sx={{ height: "80px", width: "80px", marginLeft: "20px" }}
         />
         </Box>
         <Box
@@ -67,13 +67,13 @@ export const Controls = () => {
             flexDirection: "column",
           }}
         >
-          <Box component="h4" sx={{ marginBottom: "4px", marginTop: "0px",marginLeft:"20px" }}>
+          <Box component="h2" sx={{ marginBottom: "4px", marginTop: "0px",marginLeft:"20px" }}>
             Jump
           </Box>
         <Box
           component="img"
           src="wasd/computer_key_Space_bar.png"
-          sx={{ height: "60px", width: "220px", marginLeft: "20px" }}
+          sx={{ height: "80px", width: "400px", marginLeft: "20px" }}
         />
         </Box>
         <Box
@@ -84,13 +84,13 @@ export const Controls = () => {
             flexDirection: "column",
           }}
         >
-          <Box component="h4" sx={{ marginBottom: "4px", marginTop: "0px",marginLeft:"20px" }}>
+          <Box component="h2" sx={{ marginBottom: "4px", marginTop: "0px",marginLeft:"20px" }}>
             Accelerate
           </Box>
         <Box
           component="img"
           src="wasd/computer_key_Shift.png"
-          sx={{ height: "60px", width: "130px", marginLeft: "20px" }}
+          sx={{ height: "80px", width: "190px", marginLeft: "20px" }}
         />
         </Box>
       </Box>

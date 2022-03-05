@@ -4,14 +4,15 @@ import Typography from "@mui/material/Typography";
 
 export const NavBar = () => {
   return (
-    <Box component="div" sx={{ backgroundColor: "black", height: "50px",display:"flex",justifyContent:"center", alignItems:"center" }}>
+    <Box component="div" sx={{ zIndex:2, backgroundColor: "black", height: "100px",display:"flex",justifyContent:"center", alignItems:"center", }}>
 
-        <Box component="div" sx={{margin:"0px",marginTop:"10px"}}>
+        <Box component="div" sx={{marginTop:"20px", marginTop:"20px"}}>
         <Typography
-        variant="h5"
+        variant="h3"
         color="white"
         align="center"
         fontFamily="Plumber"
+
       >
           SUPER MARIO BROS.
           </Typography>
